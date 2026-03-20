@@ -1,28 +1,18 @@
 #include <bits/stdc++.h>
 using namespace std;
-
+// print evens first then the odds or viceversa, they always have a difference of 2 (which is >1)
 int main(){
     int n;
     cin>>n;
-    if(n<5) {
+    if(n == 2 || n == 3) {
         cout<<"NO SOLUTION";
-        return 1;
+        return 0;
     }
-    vector<int> vec1 = {};
-    vector<int> vec2 = {};
-    
-    for(int i = n; i > 0; i--){
-        if(i%2 == 0){
-            vec1.push_back(i);
-        } else {
-            vec2.push_back(i);
-        }
+    for (int i = 2; i <= n; i = i + 2){
+        cout<<i<<" ";
     }
-    for(const auto &a : vec1){
-        cout<<a << " ";
-    }
-    for(const auto &a : vec2){
-        cout<<a << " ";
+    for (int i = 1; i <= n; i = i + 2){
+        cout<<i<<" ";
     }
     return 0;
 }
